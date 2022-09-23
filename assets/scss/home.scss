@@ -1,14 +1,20 @@
+//seleciona + ctrl + ; para comentar
 body {
-    background: url("../images/hero-bg-xs-tablet.webp") no-repeat; //sempre começa pelo mobile
-    background-size: cover;
+    // background: url("../images/hero-bg-xs-tablet.webp") no-repeat; //sempre começa pelo mobile
+    // background-size: cover;
     background-position: center center;
     width: 100%;
-    height: calc(100vh - 100px - 100px);
+    // height: calc(100vh - 100px - 100px);
     display: flex;
     & > header {
+        position: fixed;
+        top: 0;
+        z-index: 100; //para colocar o header por cima do conteúdo. Conta quantas tags do mesmo nivel existem no projeto, melhor colocar 100 para não correr risco.
         height: 100px;
         width: 100%;
         display: flex;
+        background: #fff;
+        
 
             button {
                 width: 290px;
