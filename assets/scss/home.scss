@@ -1,0 +1,41 @@
+body {
+    background: url("../images/hero-bg-xs-tablet.webp") no-repeat; //sempre começa pelo mobile
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: calc(100vh - 100px - 100px);
+    display: flex;
+    & > header {
+        height: 100px;
+        width: 100%;
+        display: flex;
+
+            button {
+                width: 290px;
+                height: 40px;
+                background: #ffe45c;
+                font-size: 0.8em;
+                border-radius: 20px;
+            }
+    } 
+}
+
+//inicio do responsivo
+
+/* Tablet */
+@media (min-width: 768px){ 
+    body {
+        background: url("../images/hero-bg-xs-tablet.webp") no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1280px){
+    body {
+        background: url("../images/hero-bg-desktop.webp") no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+}
