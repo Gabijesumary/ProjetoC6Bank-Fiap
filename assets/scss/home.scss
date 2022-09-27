@@ -2,6 +2,7 @@
 body {
     width: 100%;
     // height: calc(100vh - 100px - 100px);
+
     display: flex;
     & > header {
         position: fixed;
@@ -31,7 +32,12 @@ body {
                 }
             }
         }
-    }     
+        &.footer-link-a{
+            > nav > ul > li > a {
+                color: #fff
+            }    
+        }
+    }  
 }
 
 button.disabled{
@@ -40,8 +46,9 @@ button.disabled{
 }
 
 button.disabled:hover{
-    background: rgba(36,36,36,0.8);
+    background: rgba(36,36,36,0.2);
 }
+
 
 button {
     width: 290px;
