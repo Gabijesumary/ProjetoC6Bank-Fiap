@@ -7,7 +7,7 @@ carrosArray.forEach((value, key) => { //valor e posição no array
     carros.innerHTML += `<option valor="${key}">${value}</option>`;
 });
 
-carrosArray.forEach((value) => console.log(value)); //forEach pode receber 2 parâmetros
+//carrosArray.forEach((value) => console.log(value)); //forEach pode receber 2 parâmetros
 
 
 
@@ -98,11 +98,56 @@ const aereas = [
   //Função SPLICE - na posição escolhida, remova a quantidade indicada no ()
   const removeUm = newCarros.splice(0, 3); //Esse 3 pode ser outros numeros a depender a lenght do Array e de quantos você quer tirar.
   
-  console.log(removeUm, "Remove um, splice");
-  console.log(americanName, "Formato Americano");
-  console.log(newCarros, "NewCarros");
-  //**Programação funcional
-  //Função SLICE
-  //MAP
-  //FILTER
-  //FIND
+  //console.log(removeUm, "Remove um, splice");
+  //console.log(americanName, "Formato Americano");
+  //console.log(newCarros, "NewCarros");
+  console.log("--------------------------")
+
+  //**Programação funcional - imutabilidade, os dados não mudam. O array original não é alterado
+
+  //Função SLICE - Ele não altera o array original, gera um novo Array. COPIA O ARRAY
+  const frutas = ["Banana", "Maçã", "Pera", "Uva", "Melancia"];
+
+  const primeiras = frutas.slice(1,3); //copia o array
+  console.log(frutas, "slice o array original não muda");
+  console.log(primeiras, "slice - a partir da primeira posição até a terceira, copie, mas não traga a terceira");
+
+  //MAP - Retorna um novo array com os itens filtrados.
+  //retorna um novo array. Do inicio ao fim. Ele passa por todas as posições do array.
+const filtro = (item) => {
+    return item === "Pera" || item === "Maçã";
+};
+const frutasMap = frutas.map(filtro);
+ 
+//FILTER - retorna um novo array, filrando apenas true.
+const frutasFilter = frutas.filter(filtro); //
+
+//FIND - retorna a primeira ocorrência que for true
+const frutasFind = frutas.find(filtro);
+
+console.log(frutasFilter);
+
+const ages = [
+  12, 4, 50, 26, 32, 1, 5, 7, 9, 65, 11, 84, 14, 98, 16, 17, 18, 19
+];
+
+const agesFilter = ages.filter((age) => age >= 18 && age <= 60);
+console.log(agesFilter, "adulto");
+
+const agesMap = ages.map((age) => {
+  if (age >= 0 && age <= 2) {
+    return "bebê";
+  } else if (age >= 3 && age <= 11) {
+    return "criança";
+  } else if (age >= 12 && age <= 17) {
+    return "adolescente";
+  } else if (age >= 18 && age <= 60) {
+    return "adulto";
+  } else {
+    return "idoso";
+  }
+});
+console.log(agesMap, "agesMap");
+
+const agesFind = ages.find((age) => age > 60);
+console.log(agesFind, "idoso");
